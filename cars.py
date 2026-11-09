@@ -19,7 +19,7 @@ while cap.isOpened():
             scaleFactor = 1.1,
             minNeighbors = 3
     )
-    if len(cars) > 0 and car_detected:
+    if len(cars) > 0 and not car_detected:
         car_detected = True
         detection_time = time.time()
         print("car detected")
@@ -30,5 +30,5 @@ while cap.isOpened():
     cv2.imshow("video",frames)
     if cv2.waitKey(33) == 27:
         break
-    cap.release()
-    cv2.destroyAllWindows()
+cap.release()
+cv2.destroyAllWindows()
